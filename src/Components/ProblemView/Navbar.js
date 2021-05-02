@@ -8,6 +8,11 @@ import Avatar from './Avatar';
 import LogoutButton from '../Buttons/Logout'
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../Buttons/Login';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import PersonIcon from '@material-ui/icons/Person';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import SettingsIcon from '@material-ui/icons/Settings';
+import BookmarksIcon from '@material-ui/icons/Bookmarks';
 
 function Navbar(props) {
   const [currentPage, setCurrentPage] = useState("home");
@@ -105,20 +110,25 @@ function Navbar(props) {
                 {user.name}
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/profile">
+                <Link style={{display:'flex'}} className="dropdown-item" to="/profile">
+                  <PersonIcon style={{marginRight:'4px',marginLeft:'-13px', fontSize:'20px'}}/>
                   Profile
                 </Link>
-                <Link className="dropdown-item" to="/#">
+                <Link style={{display:'flex'}} className="dropdown-item" to="/#">
+                  <BookmarksIcon style={{marginRight:'4px',marginLeft:'-13px' , fontSize:'20px'}}/>
                   Bookmarks
                 </Link>
-                <Link className="dropdown-item" to="/dashboard">
+                <Link style={{display:'flex'}} className="dropdown-item" to="/dashboard">
+                  <DashboardIcon style={{marginRight:'4px',marginLeft:'-13px' , fontSize:'20px'}}/>
                   Dashboard
                 </Link>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="/settings">
+                <Link style={{display:'flex'}} className="dropdown-item" to="/settings">
+                  <SettingsIcon style={{marginRight:'4px',marginLeft:'-13px', fontSize:'20px'}}/>
                   Settings
                 </Link>
-                <Link className="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                <Link style={{display:'flex'}} className="dropdown-item" data-toggle="modal" data-target="#logoutModal">
+                  <ExitToAppIcon style={{marginRight:'4px',marginLeft:'-13px', fontSize:'20px'}}/>
                   Logout
                 </Link>
               </div>
